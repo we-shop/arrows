@@ -63,3 +63,17 @@ parameter to the forms, like =->>=:
   ;; -> [[6 24], [12 90 36]]
 
 #+END_SRC
+
+
+** Bugs/features/suggestions/questions?
+
+Please feel free to submit bug reports/patches etc through the GitHub
+repository in the usual way!
+
+Thanks!
+
+** License
+
+Copyright © 2017 Social Superstore
+
+Distributed under the Eclipse Public License, the same as Clojure.

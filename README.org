@@ -1,0 +1,54 @@
+* Arrows
+An extension of the Clojure threading macros to help with manipulating nested data structures.
+
+=[com.socialsuperstore/arrows "0.1.0"]=
+
+#+BEGIN_SRC clojure
+  ;; clojure:
+  (:require [sss.arrows :refer [->% ->>%]])
+
+  ;; clojurescript
+  (:require-macros [sss.arrows :refer [->% ->>%]])
+#+END_SRC
+
+** Problem - can't nest =#()=-style functions in Clojure:
+This is a pain when you're manipulating nested structures:
+
+#+BEGIN_SRC clojure
+  (let [table [{:a 1 :b [4 12]},
+               {:a 3 :b [8 35]}]]
+    ;; not allowed - #() within #()
+    (map #(update-in % [:b] #(map inc %))
+         table))
+#+END_SRC
+
+This library provides two macros: =->%= and =->>%=, each of which create an
+anonymous function that threads its argument through the provided forms in a
+similar way to =->= and =->>=:
+
+#+BEGIN_SRC clojure
+  (let [table [{:a 1 :b [4 12]},
+               {:a 3 :b [8 35]}]]
+    (map (->% (update-in [:b] #(map inc %))
+              (assoc :c 8))
+         table))
+
+  ;; transforms into:
+
+  (let [table [{:a 1 :b [4 12]},
+               {:a 3 :b [8 35]}]]
+    (map (fn [m]
+           (-> m
+               (update-in [:b] #(map inc %))
+               (assoc :c 8)))
+         table))
+
+  ;; and returns
+
+  ;; [{:a 1, :b [5 13], :c 8},
+  ;;  {:a 3, :b [9 36], :c 8}]
+
+#+END_SRC
+
+=->>%= behaves in a similar manner, except threads the argument as the last
+parameter to the forms, like =->>=.

@@ -4,10 +4,10 @@ An extension of the Clojure threading macros to help with manipulating nested da
 =[com.socialsuperstore/arrows "0.1.0"]=
 
 #+BEGIN_SRC clojure
-  ;; clojure:
+  ;; clojure, clojurescript >= 1.9.198:
   (:require [sss.arrows :refer [->% ->>%]])
 
-  ;; clojurescript
+  ;; clojurescript < 1.9.198
   (:require-macros [sss.arrows :refer [->% ->>%]])
 #+END_SRC
 

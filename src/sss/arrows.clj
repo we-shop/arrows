@@ -10,7 +10,7 @@
 
   (let [table [{:a 1 :b [4 12]},
                {:a 3 :b [8 35]}]]
-    (map (->% (update-in [:b] #(map inc %))
+    (map (->% (update :b #(map inc %))
               (assoc :c 8))
          table))
 

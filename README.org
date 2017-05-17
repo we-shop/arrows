@@ -17,8 +17,10 @@ This is a pain when you're manipulating nested structures:
 #+BEGIN_SRC clojure
   (let [table [{:a 1 :b [4 12]},
                {:a 3 :b [8 35]}]]
-    ;; not allowed - #() within #()
-    (map #(update-in % [:b] #(map inc %))
+    (map #(-> %
+              ;; not allowed - #() within #()
+              (update :b #(map inc %))
+              (assoc :c 8))
          table))
 #+END_SRC
 
@@ -29,7 +31,7 @@ similar way to =->= and =->>=:
 #+BEGIN_SRC clojure
   (let [table [{:a 1 :b [4 12]},
                {:a 3 :b [8 35]}]]
-    (map (->% (update-in [:b] #(map inc %))
+    (map (->% (update :b #(map inc %))
               (assoc :c 8))
          table))
 
@@ -39,7 +41,7 @@ similar way to =->= and =->>=:
                {:a 3 :b [8 35]}]]
     (map (fn [m]
            (-> m
-               (update-in [:b] #(map inc %))
+               (update :b #(map inc %))
                (assoc :c 8)))
          table))
 
@@ -47,8 +49,17 @@ similar way to =->= and =->>=:
 
   ;; [{:a 1, :b [5 13], :c 8},
   ;;  {:a 3, :b [9 36], :c 8}]
-
 #+END_SRC
 
 =->>%= behaves in a similar manner, except threads the argument as the last
-parameter to the forms, like =->>=.
+parameter to the forms, like =->>=:
+
+#+BEGIN_SRC clojure
+  (let [results [[3 5 8 12], [6 45 23 18]]]
+    (map (->>% (filter #(zero? (mod % 3)))
+               (map #(* 2 %)))
+         results))
+
+  ;; -> [[6 24], [12 90 36]]
+
+#+END_SRC

@@ -1,4 +1,4 @@
-(defproject com.socialsuperstore/arrows "0.1.0-SNAPSHOT"
+(defproject com.socialsuperstore/arrows "0.1.0"
   :description "Extensions to the Clojure threading macros to help with manipulating nested data structures"
   :url "https://github.com/socialsuperstore/arrows"
 

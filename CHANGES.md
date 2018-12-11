@@ -1,5 +1,9 @@
 # weshop/arrows changes
 
+## 0.2.1
+
+Fixed a small issue with the `pom.xml`, arrows doesn't depend on 1.10.0-RC3.
+
 ## 0.2.0
 
 Merged [#1](https://github.com/we-shop/arrows/pull/1).

@@ -1,4 +1,4 @@
-.PHONY: prepl test test-clj test-cljs
+.PHONY: prepl test test-clj test-cljs sync-pom
 
 prepl:
 	clj -Adev \
@@ -12,3 +12,9 @@ test-clj:
 
 test-cljs:
 	clj -Adev -m cljs-test-runner.main
+
+
+# To publish, you should `make sync-pom`, commit any changes and then `mvn deploy`.
+sync-pom:
+	clj -Spom
+	xmllint -o pom.xml --format pom.xml

@@ -1,14 +1,14 @@
 * Arrows
-An extension of the Clojure threading macros to help with manipulating nested data structures.
+An extension of the Clojure (and ClojureScript) threading macros to help with manipulating nested data structures.
 
 =[weshop/arrows "0.2.0"]=
 
 #+BEGIN_SRC clojure
   ;; clojure, clojurescript >= 1.9.198:
-  (:require [sss.arrows :refer [->% ->>%]])
+  (:require [weshop.arrows :refer [->% ->>%]])
 
   ;; clojurescript < 1.9.198
-  (:require-macros [sss.arrows :refer [->% ->>%]])
+  (:require-macros [weshop.arrows :refer [->% ->>%]])
 #+END_SRC
 
 ** Problem - can't nest =#()=-style functions in Clojure:

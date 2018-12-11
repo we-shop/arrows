@@ -74,6 +74,6 @@ Thanks!
 
 ** License
 
-Copyright © 2017 Social Superstore
+Copyright © 2018 Social Superstore
 
 Distributed under the Eclipse Public License, the same as Clojure.

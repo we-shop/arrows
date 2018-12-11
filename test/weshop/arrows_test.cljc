@@ -1,5 +1,5 @@
 (ns weshop.arrows-test
-  (:require [#?(:clj clojure.test, :cljs cljs.test) :as t]
+  (:require [clojure.test, :as t]
             [weshop.arrows :refer [->% ->>%]]))
 
 (t/deftest thread-first

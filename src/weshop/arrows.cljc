@@ -1,4 +1,5 @@
-(ns sss.arrows)
+(ns weshop.arrows
+  #?(:cljs (:require-macros weshop.arrows)))
 
 (defmacro ->%
   "Creates an anonymous function, threading the parameter through the

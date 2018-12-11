@@ -9,3 +9,6 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
+/.cpcache/
+/.cljs_node_repl/
+/cljs-test-runner-out/

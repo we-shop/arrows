@@ -1,7 +1,7 @@
 * Arrows
 An extension of the Clojure threading macros to help with manipulating nested data structures.
 
-=[com.socialsuperstore/arrows "0.1.0"]=
+=[weshop/arrows "0.2.0"]=
 
 #+BEGIN_SRC clojure
   ;; clojure, clojurescript >= 1.9.198:
@@ -74,6 +74,6 @@ Thanks!
 
 ** License
 
-Copyright © 2017 Social Superstore
+Copyright © 2018 WeShop
 
 Distributed under the Eclipse Public License, the same as Clojure.

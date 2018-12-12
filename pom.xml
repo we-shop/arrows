@@ -6,7 +6,7 @@
   <version>0.2.1</version>
   <name>arrows</name>
   <description>Extensions to the Clojure threading macros to help with manipulating nested data structures</description>
-  <url>https://github.com/weshop/arrows</url>
+  <url>https://github.com/we-shop/arrows</url>
   <licenses>
     <license>
       <name>Eclipse Public License</name>
@@ -14,7 +14,7 @@
     </license>
   </licenses>
   <scm>
-    <url>https://github.com/weshop/arrows</url>
+    <url>https://github.com/we-shop/arrows</url>
   </scm>
   <dependencies>
     <dependency>
